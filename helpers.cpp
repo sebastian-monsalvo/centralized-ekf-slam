@@ -11,14 +11,14 @@ std::array <float, 3> f(std::array <float, 3> mu, std::array <float, 2> u, float
     return result;
 }
 
-int main(){
-    std::array <float, 3> mu = {0, 0, 0};
-    std::array<float, 2> u = {3.3, 5.2};
-    mu = f(mu, u, 0.1);
-    std::cout << "x changed to: " << mu[0] << "\n";
-    std::cout << "the angular velocity is: " << u[1];
-    return 0;
-}
+// int main(){
+//     std::array <float, 3> mu = {0, 0, 0};
+//     std::array<float, 2> u = {3.3, 5.2};
+//     mu = f(mu, u, 0.1);
+//     std::cout << "x changed to: " << mu[0] << "\n";
+//     std::cout << "the angular velocity is: " << u[1];
+//     return 0;
+// }
 
 std::array <float, 3> mu = {0.0, 0.0, 0.0};
 std::array <float, 2> u = {0.0, 0.0};
