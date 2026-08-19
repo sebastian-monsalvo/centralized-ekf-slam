@@ -11,15 +11,17 @@ std::array <float, 3> f(std::array <float, 3> mu, std::array <float, 2> u, float
     return result;
 }
 
-// int main(){
-//     std::array <float, 3> mu = {0, 0, 0};
-//     std::array<float, 2> u = {3.3, 5.2};
-//     mu = f(mu, u, 0.1);
-//     std::cout << "x changed to: " << mu[0] << "\n";
-//     std::cout << "the angular velocity is: " << u[1];
-//     return 0;
-// }
+std::array <float, 2> g(std::array <float, 3> mu, std::array <float, 2> l) {
+    std::array <float, 2> result = {0.0, 0.0};
+    float l_x = l[0];
+    float l_y = l[1];
+    float r_x = mu[0];
+    float r_y = mu[1];
 
-std::array <float, 3> mu = {0.0, 0.0, 0.0};
-std::array <float, 2> u = {0.0, 0.0};
+    float d = sqrt(pow(l_x - r_x, 2) + pow(l_y - r_y, 2));
+    float b = atan( (l_y - r_y) / (l_x - r_x) );
+    result[0] = d;
+    result[1] = b;
+    return result;
+}
 
