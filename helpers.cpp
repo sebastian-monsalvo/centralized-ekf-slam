@@ -24,4 +24,3 @@ std::array <float, 2> g(std::array <float, 3> mu, std::array <float, 2> l) {
     result[1] = b;
     return result;
 }
-

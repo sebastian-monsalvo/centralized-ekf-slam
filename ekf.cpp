@@ -22,5 +22,8 @@ int main() {
     r_and_b = g(mu, {3.0, 4.0});
     std::cout << "The NEW range and bearing are: \n";
     std::cout << "Range: " << r_and_b[0] << "\n" << "Bearing: " << r_and_b[1] << "\n";
+
+    std::array <std::array <float, 3>, 3> my_array = {{{1.0, 2.0, 3.0}, {1.0, 2.0, 3.0}, {1.0, 2.0, 3.0}}};
+    std::cout << "first element of first row?... " << my_array[0][0];
     return 0;
 }
