@@ -36,5 +36,11 @@ int main() {
     my_A = A(mu, u, 1.0);
     std::cout << "The Jacobian calculated was: \n";
     std::cout << my_A << std::endl;
+
+    mu = {0.0, 0.0, 0.0};
+    std::array <float, 2> l = {1.0, 1.0};
+    Eigen::Matrix <float, 2, 3> my_C = C(mu, l);
+    std::cout << "The C jacobian is: \n";
+    std::cout << my_C << std::endl;
     return 0;
 }

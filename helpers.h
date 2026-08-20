@@ -8,3 +8,5 @@ std::array <float, 3> f(std::array <float, 3> mu, std::array <float, 2> u, float
 std::array <float, 2> g(std::array <float, 3> mu, std::array <float, 2> l);
 
 Eigen::Matrix <float, 3, 3> A(std::array <float, 3> mu, std::array <float, 2> u, float dt);
+
+Eigen::Matrix <float, 2, 3> C(std::array <float, 3> mu, std::array <float, 2> l);
