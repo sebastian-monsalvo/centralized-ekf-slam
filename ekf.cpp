@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include "helpers.h"
+#include "eigen-5.0.0/Eigen/Dense"
 
 
 int main() {
@@ -24,6 +25,16 @@ int main() {
     std::cout << "Range: " << r_and_b[0] << "\n" << "Bearing: " << r_and_b[1] << "\n";
 
     std::array <std::array <float, 3>, 3> my_array = {{{1.0, 2.0, 3.0}, {1.0, 2.0, 3.0}, {1.0, 2.0, 3.0}}};
-    std::cout << "first element of first row?... " << my_array[0][0];
+    std::cout << "first element of first row?... " << my_array[0][0] << std::endl;
+
+    mu = {0.0, 0.0, 0.0};
+    u = {1.0, 0.0};
+    Eigen::Matrix <float, 3, 3> my_A;
+    my_A.setZero();
+    std::cout << my_A << std::endl;
+
+    my_A = A(mu, u, 1.0);
+    std::cout << "The Jacobian calculated was: \n";
+    std::cout << my_A << std::endl;
     return 0;
 }

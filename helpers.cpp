@@ -1,6 +1,7 @@
 #include <array>
 #include <iostream>
 #include <cmath>
+#include "eigen-5.0.0/Eigen/Dense"
 
 std::array <float, 3> f(std::array <float, 3> mu, std::array <float, 2> u, float dt) {
     std::array <float, 3> result = {0.0, 0.0, 0.0};
@@ -22,5 +23,15 @@ std::array <float, 2> g(std::array <float, 3> mu, std::array <float, 2> l) {
     float b = atan( (l_y - r_y) / (l_x - r_x) );
     result[0] = d;
     result[1] = b;
+    return result;
+}
+
+Eigen::Matrix <float, 3, 3> A(std::array <float, 3> mu, std::array <float, 2> u, float dt) {
+    Eigen::Matrix <float, 3, 3> result;
+    result.setIdentity();
+    float v = u[0];
+    float th = mu[2];
+    result(0, 2) = -v * dt * std::sin(th);
+    result(1, 2) = v * dt * std::cos(th);
     return result;
 }
